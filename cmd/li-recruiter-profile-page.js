@@ -30,7 +30,7 @@ function handleMessageResponse(msg, scrape) {
 
 // Initialize
 export async function scrapeRecruiterProfilePage(messenger) {
-  console.log("scraping recruiter profile page");
+  console.debug("scraping recruiter profile page");
 
   const scrape = new RecruiterProfilePageScrape(document);
   if (!scrape.name || !scrape.location || !scrape.company) {

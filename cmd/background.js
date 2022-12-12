@@ -165,7 +165,7 @@ async function handleSearch(body) {
       backupFilterCriteriaCacheKey
     );
     if (matches.length === 0) {
-      console.log("No matches found using regular - trying match from backup");
+      console.debug("No matches found using regular - trying match from backup");
       const removedCompanyTier = "Unknown";
       criteriaBackup.forEach((backup) => {
         // Variation name is initially loaded into tier attribute
@@ -191,7 +191,7 @@ async function handleSearch(body) {
   }
 
   // if (matches.length === 0) {
-  //   console.log("No matches found - trying fuzzy search");
+  //   console.debug("No matches found - trying fuzzy search");
   //   const companies = Array.from(body.company).reduce(
   //     (acc, company) => {
   //       const fuse = new Fuse(criteria, fuseOptions);
@@ -208,7 +208,7 @@ async function handleSearch(body) {
   //   // const fuseSearchResult = fuse.search(body.company[0]).map((c) => {
   //   //   return c.item
   //   // })
-  //   console.log("fuse result", body.company, companies);
+  //   console.debug("fuse result", body.company, companies);
   //   matches = companies
   // }
 

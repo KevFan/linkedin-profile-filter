@@ -23,7 +23,7 @@ function handleRemoveNotification() {
 
 // Initialize
 export async function scrapeProfilePage(messenger) {
-  console.log("scrapping personal profile page..")
+  console.debug("scrapping personal profile page..")
 
   const scrape = new ProfilePageScrape(document);
   if (!scrape.name || !scrape.location

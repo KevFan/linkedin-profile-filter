@@ -5,7 +5,7 @@ export class ProfilePageScrape {
    */
   constructor(document) {
     this.document = document;
-    // console.log(this)
+    // console.debug("personal profile", this)
   }
 
   /**
@@ -28,7 +28,7 @@ export class ProfilePageScrape {
     const locElem = this.document.querySelector(
       "div[data-live-test-row-lockup-location]"
     );
-    // console.log("location is", locElem)
+    // console.debug("location is", locElem)
     if (!locElem) {
       return;
     }
@@ -45,7 +45,7 @@ export class ProfilePageScrape {
     if (!experienceElem) {
       return [];
     }
-    // console.log("experience elem", experienceElem)
+    // console.debug("experience elem", experienceElem)
 
     const posElems = experienceElem.querySelectorAll(
       "div[data-test-position-list-container]"
@@ -53,7 +53,7 @@ export class ProfilePageScrape {
     if (!posElems) {
       return [];
     }
-    // console.log("posElems", posElems)
+    // console.debug("posElems", posElems)
 
     const lastPosElem = posElems[0]
 
@@ -87,7 +87,7 @@ export class RecruiterProfilePageScrape {
    */
   constructor(document) {
     this.document = document;
-    // console.log(this)
+    // console.debug("recruiter profile", this)
   }
 
   /**
@@ -133,43 +133,42 @@ export class RecruiterProfilePageScrape {
   }
 
   get company() {
-    const prevPositionElems = this.document.querySelectorAll("div[data-test-group-position-list-container]");
+    // Fetch grouped experience and singular experience
+    const prevPositionElems = this.document.querySelectorAll("div[data-test-group-position-list-container], div[data-test-position-list-container]");
     if (!prevPositionElems) {
       return [];
     }
 
-    // console.log("the positions", prevPositionElems)
+    // console.debug("the positions", prevPositionElems)
     const companies = Array.from(prevPositionElems).reduce(
       (acc, prevPositionElem) => {
+        // Company name from grouped experience or singular experience
         let prevPositionCompanyElem = prevPositionElem.querySelector(
-          "strong[data-test-grouped-position-entity-company-name]"
+          "strong[data-test-grouped-position-entity-company-name], a[data-test-position-entity-company-link]"
         );
 
-        // console.log("the prev company elem", prevPositionCompanyElem, prevPositionCompanyElem.textContent.trim())
-        if (!prevPositionCompanyElem) {
-          prevPositionCompanyElem = prevPositionElem.querySelector(
-            "dd[data-test-position-entity-company-name]"
-          );
-        }
         if (!prevPositionCompanyElem) {
           return acc;
         }
-        const prevPositionDateElem = prevPositionElem.querySelector(
-          "span[data-test-grouped-position-entity-date-range]"
+        // console.debug("the prev company elem", prevPositionCompanyElem, prevPositionCompanyElem.textContent.trim())
+        
+        // Position date in grouped experience or singular expeience
+        let prevPositionDateElem = prevPositionElem.querySelector(
+          "span[data-test-grouped-position-entity-date-range], span[data-test-position-entity-date-range]"
         );
 
-        // console.log("Position length is", prevPositionDateElem.textContent)
+        // console.debug("Position length is", prevPositionDateElem.textContent)
         if (!prevPositionDateElem || !prevPositionDateElem.textContent.toLowerCase().includes("present")) {
           return acc;
         }
-        // console.log("returning the present company")
+        // console.debug("returning the present company")
         acc.push(prevPositionCompanyElem.textContent.trim());
         return acc;
       },
       []
     );
 
-    // console.log("the companies", companies)
+    // console.debug("the companies", companies)
     return GenerateNamesForCompay(companies[0], this.location);
   }
 }
@@ -267,7 +266,7 @@ export function genScrapeId(r, scrapeType) {
 export function genMatchDiv(r, s, scrapeType) {
   const elem = document.createElement("div");
   elem.id = genScrapeId(s, scrapeType);
-  // console.log("id is", elem.id, scrapeType)
+  // console.debug("id is", elem.id, scrapeType)
   elem.style =
     "color: white; border-radius: 16px; border: 3px solid #d9534f; background-color: #d9534f; font-weight: bolder; text-align: center; margin: 5px;";
   elem.innerHTML = `${r.name} is a partner (${r.tier}) in ${
