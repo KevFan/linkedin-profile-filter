@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "LinkedIn Profile Filter",
   "short_name": "LPF",
   "version": "0.16.0",
@@ -13,10 +13,8 @@
   },
   "key": "",
   "background": {
-    "scripts": [
-      "dist/background.js"
-    ],
-    "persistent": true
+    "service_worker": "dist/background.js",
+    "type": "module"
   },
   "content_scripts": [
     {
@@ -33,9 +31,10 @@
     "notifications",
     "identity",
     "activeTab",
-    "storage",
+    "storage"
+  ],
+  "host_permissions": [
     "*://*.linkedin.com/",
-    "https://ssl.gstatic.com/",
     "https://www.googleapis.com/",
     "https://accounts.google.com/"
   ]
