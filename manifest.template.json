@@ -3,7 +3,7 @@
   "name": "LinkedIn Profile Filter",
   "version": "0.15.0",
   "description": "Add notifications to LinkedIn account pages based on criteria",
-  "author": "Aiden Keating <akeating@redhat.com>",
+  "author": "Kevin Fan <chfan@redhat.com>",
   "oauth2": {
     "client_id": "",
     "scopes": ["https://www.googleapis.com/auth/spreadsheets.readonly"]
