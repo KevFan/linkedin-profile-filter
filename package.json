@@ -1,12 +1,12 @@
 {
   "name": "linkedin-profile-filter",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Profile Filter for LinkedIn",
   "main": "background.js",
   "scripts": {
     "lint:js": "eslint ./**/*.js",
     "build": "rollup -c --bundleConfigAsCjs",
-    "build:prod": "rollup -c && zip -vr linkedin-profile-filter.zip _build -x '*.DS_Store'",
+    "build:prod": "rollup -c --bundleConfigAsCjs && zip -vr linkedin-profile-filter.zip _build -x '*.DS_Store'",
     "test": "gulp test"
   },
   "author": "Aiden Keating <akeating@redhat.com>",

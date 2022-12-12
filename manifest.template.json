@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "LinkedIn Profile Filter",
   "short_name": "LPF",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Add notifications to LinkedIn account pages based on criteria",
   "author": "Kevin Fan <chfan@redhat.com>",
   "oauth2": {
