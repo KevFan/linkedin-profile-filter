@@ -185,7 +185,7 @@ const searchMultipleCurrentPositionsDoc = new JSDOM(
 `).window.document;
 
 // Tests for RecruiterProfilePageScrape
-test("ensure recruiter profile scraper retrieves primary data if available", async (t) => {
+test("RecruiterProfilePageScrape - ensure recruiter profile scraper retrieves primary data if available", async (t) => {
   const scrape = new RecruiterProfilePageScrape(goodDoc);
 
   t.equals(scrape.name, "Aiden Keating");

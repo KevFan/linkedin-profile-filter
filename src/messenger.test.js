@@ -1,7 +1,7 @@
 import test from 'tape-promise/tape';
 import ChromeMessenger from './messenger';
 
-test('ensure search provides the correct message structure', async (t) => {
+test('messenger - ensure search provides the correct message structure', async (t) => {
   t.plan(4);
   const expectedName = 'name';
   const expectedCompany = 'company';
@@ -23,7 +23,7 @@ test('ensure search provides the correct message structure', async (t) => {
   });
 });
 
-test('ensure clear cache provides the correct message structure', async (t) => {
+test('messenger - ensure clear cache provides the correct message structure', async (t) => {
   t.plan(1);
   const mockProducer = {
     sendMessage: async (msg) => {
