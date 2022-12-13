@@ -13,9 +13,9 @@ const goodDoc = new JSDOM(`<!DOCTYPE html>
         <div data-test-row-lockup-location>
         United States
         </div>
-        <div class="position-item">
+        <div class="position-item" data-test-group-position-list-container>
           <h2 class="searchable">Software Engineer</h2>
-          <a class="position-item__company-link">Red Hat</a>
+          <a class="position-item__company-link" data-test-position-entity-company-link>Red Hat</a>
           <span data-test-position-entity-date-range>2018 - Present</h2>
         </div>
       </div>
@@ -107,22 +107,22 @@ const searchMultipleCurrentPositionsDoc = new JSDOM(
                   </dt>
                   <!---->
                   <div data-test-expandable-items="" id="ember2780" class="ember-ts-expandable-list ember-view">
-                      <dd id="ember2781" class="history-group__description t-14 t-black t-normal ember-view">
+                      <li data-test-description-description id="ember2781" class="history-group__description t-14 t-black t-normal ember-view">
                         <!---->
                         <span>Senior Recruiter at <em class="sh">Company 1</em></span>
                         <span aria-hidden="true">·</span>
                         <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
                         <time>2019</time> – Present
                         </span>
-                      </dd>
-                      <dd id="ember2782" class="history-group__description t-14 t-black t-normal ember-view">
+                      </li>
+                      <li data-test-description-description id="ember2782" class="history-group__description t-14 t-black t-normal ember-view">
                         <!---->
                         <span>Recruitment Analyst at <em class="sh">Company 2</em></span>
                         <span aria-hidden="true">·</span>
                         <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
                         <time>2018</time> – Present
                         </span>
-                      </dd>
+                      </li>
                       <!---->
                   </div>
                 </div>
@@ -194,7 +194,7 @@ test("ensure recruiter profile scraper retrieves primary data if available", asy
 });
 
 // Tests for RecruiterSearchOrPipelinePageScrape
-test("ensure recruiter search scraper retrieves primary data if available", async (t) => {
+test("RecruiterSearchOrPipelinePageScrape - ensure recruiter search scraper retrieves primary data if available", async (t) => {
   const scrape = new RecruiterSearchOrPipelinePageScrape(searchMultipleCurrentPositionsDoc);
   
   t.equals(scrape.name, "Test User");

@@ -3,7 +3,7 @@ import { RecruiterSearchOrPipelinePageScrape, genScrapeId, genMatchDiv } from ".
 const scrapeType = "recruiterPipeline"
 
 export async function scrapeRecruiterPipelinePage(messenger) {
-  console.log('scraping recrutier pipeline page')
+  console.debug('scraping recrutier pipeline page')
   const resultListElem = document.querySelector(".manage-core__main-content-wrapper");
   if (!resultListElem) {
     return;

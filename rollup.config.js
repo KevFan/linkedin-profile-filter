@@ -16,7 +16,6 @@ const cmdDir = "cmd";
 // root files to build for the extension
 const jsFiles = [
   "background.js",
-  "li-profile-page.js",
   "li-recruiter-profile-page.js",
   "li-recruiter-search-page.js",
   "li-recruiter-pipeline-page.js",
