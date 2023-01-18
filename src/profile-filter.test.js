@@ -1,7 +1,7 @@
 import test from 'tape-promise/tape';
 import { CompanyNameParser } from './profile-filter';
 
-test('ensure company name parser works as expected', async (t) => {
+test('profile-filter - ensure company name parser works as expected', async (t) => {
   const cnp = new CompanyNameParser();
 
   const ibmAlts = cnp.getAltNamesFor('IBM Ireland Ltd');
