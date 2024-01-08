@@ -30,7 +30,6 @@
   "permissions": [
     "notifications",
     "identity",
-    "activeTab",
     "storage"
   ],
   "host_permissions": [
