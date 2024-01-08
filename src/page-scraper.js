@@ -6,7 +6,7 @@ export class RecruiterProfilePageScrape {
    */
   constructor(document) {
     this.document = document;
-   // console.debug("recruiter profile", this)
+    // console.debug("recruiter profile", this)
   }
 
   /**
