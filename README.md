@@ -36,8 +36,8 @@ Update the contents of `manifest.json`, where:
 
 Build the project:
 
-```
-yarn build
+```sh
+npm run build
 ```
 
 Import the project in chrome.
@@ -55,7 +55,7 @@ Ensure a version bump of `manifest.json` and `package.json` have been done.
 The Chrome dashboard will reject attempted updates whose version conflicts with
 a previous release of the extension.
 
-Run `yarn build:prod`.
+Run `npm run build:prod`.
 
 Upload the resulting `zip` file through the Chrome Extension dashboard. This
 will take about 30 minutes to become available to new testers.
