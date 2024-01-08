@@ -12,7 +12,7 @@ function handleMessageResponse(msg, scrape) {
   }
 
   const backgroundCardElem = document.querySelector(
-    ".topcard-condensed__content"
+    "#profile-container"
   );
   if (!backgroundCardElem) {
     return;
