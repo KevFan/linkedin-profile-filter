@@ -8,14 +8,14 @@ const goodDoc = new JSDOM(`<!DOCTYPE html>
     <body>
       <div id="profile-container">
         <span data-test-row-lockup-full-name>
-        Aiden Keating
+        Test User
         </span>
         <div data-test-row-lockup-location>
         United States
         </div>
         <div class="position-item" data-test-group-position-list-container>
           <h2 class="searchable">Software Engineer</h2>
-          <a class="position-item__company-link" data-test-position-entity-company-link>Red Hat</a>
+          <a class="position-item__company-link" data-test-position-entity-company-link>Company 1</a>
           <span data-test-position-entity-date-range>2018 - Present</h2>
         </div>
       </div>
@@ -39,39 +39,6 @@ const searchMultipleCurrentPositionsDoc = new JSDOM(
                                   </a>
                               </div>
                             </span>
-                            <span data-test-lockup-degree="">
-                              <div id="ember2771" class="artdeco-entity-lockup__badge ember-view">
-                                  <span class="a11y-text">Third degree connection</span>
-                                  <span class="artdeco-entity-lockup__degree" aria-hidden="true">
-                                  ·&nbsp;3rd
-                                  </span>
-                                  <!----><!---->
-                              </div>
-                            </span>
-                            <!---->                  
-                            <div id="ember2772" class="ember-view">
-                              <div id="ember2773" class="artdeco-entity-lockup artdeco-entity-lockup--size-7 ember-view">
-                                  <span data-test-premium-badge="">
-                                    <div id="ember2774" class="artdeco-entity-lockup__badge ember-view">
-                                        <!---->  &nbsp;
-                                        <li-icon aria-hidden="true" type="linkedin-premium-gold-icon" size="small">
-                                          <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon" focusable="false">
-                                              <g class="small-icon" style="fill-opacity: 1">
-                                                <path d="M13.75,1H2.25A1.25,1.25,0,0,0,1,2.25v11.5A1.25,1.25,0,0,0,2.25,15h11.5A1.25,1.25,0,0,0,15,13.75V2.25A1.25,1.25,0,0,0,13.75,1Z" style="fill: #9f8333"></path>
-                                                <path d="M4,2.68A1.36,1.36,0,0,0,2.69,4,1.36,1.36,0,0,0,4,5.31,1.36,1.36,0,0,0,5.31,4,1.36,1.36,0,0,0,4,2.68Z" style="fill: #fff"></path>
-                                                <rect x="3" y="6" width="2" height="7" style="fill: #fff"></rect>
-                                                <path d="M10.25,5.88a3,3,0,0,0-2.31,1H7.88V6H6v7H8V10c0-1.17.48-2,1.62-2,.91,0,1.38.66,1.38,2v3h2V8.88C13,7,12.21,5.88,10.25,5.88Z" style="fill: #fff"></path>
-                                              </g>
-                                          </svg>
-                                        </li-icon>
-                                        <!---->
-                                    </div>
-                                  </span>
-                                  <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
-                              </div>
-                            </div>
-                            <!----><!---->
-                            <!---->
                         </span>
                         <div id="ember2775" class="artdeco-entity-lockup__subtitle ember-view">        <span data-test-row-lockup-headline="" data-live-test-row-lockup-headline="">
                             Recruiter at <em class="sh">Company 1</em>
@@ -95,89 +62,42 @@ const searchMultipleCurrentPositionsDoc = new JSDOM(
                   </div>
                 </section>
             </div>
-            <dl id="ember2778" class="history ember-view">
-                <div id="ember2779" class="history-group ember-view">
-                  <dt data-test-description-entry-term="" class="history-group__term t-14 t-black t-bold">
-                      <dfn data-test-history-group-definition="" class="history-group__definition" aria-hidden="true">
-                      Current
-                      </dfn>
-                      <dfn class="a11y-text">
-                      Profile current positions
-                      </dfn>
-                  </dt>
-                  <!---->
-                  <div data-test-expandable-items="" id="ember2780" class="ember-ts-expandable-list ember-view">
-                      <li data-test-description-description id="ember2781" class="history-group__description t-14 t-black t-normal ember-view">
-                        <!---->
-                        <span>Senior Recruiter at <em class="sh">Company 1</em></span>
-                        <span aria-hidden="true">·</span>
-                        <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
-                        <time>2019</time> – Present
-                        </span>
-                      </li>
-                      <li data-test-description-description id="ember2782" class="history-group__description t-14 t-black t-normal ember-view">
-                        <!---->
-                        <span>Recruitment Analyst at <em class="sh">Company 2</em></span>
-                        <span aria-hidden="true">·</span>
-                        <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
-                        <time>2018</time> – Present
-                        </span>
-                      </li>
+            <!---->            
+            <div class="expandable-list" data-test-expandable-list="">
+                <ol class="history-group__list-items">
+                  <li data-test-description-description="" class="t-14 t-black t-normal">
                       <!---->
-                  </div>
-                </div>
-                <div id="ember2783" class="history-group ember-view">
-                  <dt data-test-description-entry-term="" class="history-group__term t-14 t-black t-bold">
-                      <dfn data-test-history-group-definition="" class="history-group__definition" aria-hidden="true">
-                      Past
-                      </dfn>
-                      <dfn class="a11y-text">
-                      Profile past positions
-                      </dfn>
-                  </dt>
-                  <!---->
-                  <div data-test-expandable-items="" id="ember2784" class="ember-ts-expandable-list ember-view">
-                      <dd id="ember2785" class="history-group__description t-14 t-black t-normal ember-view">
-                        <!---->
-                        <span>Account Manager at Past Experince 1</span>
-                        <span aria-hidden="true">·</span>
-                        <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
-                        <time>2017</time> – <time>2018</time>
-                        </span>
-                      </dd>
+                      <span>Senior Recruiter  at <em class="sh">Company 1</em></span>
+                      <span aria-hidden="true">·</span>
+                      <span class="description-entry__date-duration" data-test-description-entry-date-duration="">
+                      <time>2019</time> – Present
+                      </span>
                       <!---->
-                  </div>
-                </div>
-                <div id="ember2786" class="history-group ember-view">
-                  <dt data-test-description-entry-term="" class="history-group__term t-14 t-black t-bold">
-                      <dfn data-test-history-group-definition="" class="history-group__definition" aria-hidden="true">
-                      Education
-                      </dfn>
-                      <dfn class="a11y-text">
-                      Profile education
-                      </dfn>
-                  </dt>
-                  <!---->
-                  <div data-test-expandable-items="" id="ember2787" class="ember-ts-expandable-list ember-view">
-                      <dd id="ember2788" class="history-group__description t-14 t-black t-normal ember-view">
-                        <!---->
-                        <span>Education 1, Diploma</span>
-                        <span aria-hidden="true">·</span>
-                        <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
-                        <time>2019</time> – <time>2020</time>
-                        </span>
-                      </dd>
-                      <dd id="ember2789" class="history-group__description t-14 t-black t-normal ember-view">
-                        <!---->
-                        <span>Education 2, Diploma</span>
-                        <span aria-hidden="true">·</span>
-                        <span class="row-description-entry__date-duration" data-test-description-entry-date-duration="">
-                        <time>2018</time> – <time>2019</time>
-                        </span>
-                      </dd>
-                  </div>
-                </div>
-            </dl>
+                      <!---->
+                  </li>
+                  <li data-test-description-description="" class="t-14 t-black t-normal">
+                      <!---->
+                      <span>Recruiter at <em class="sh">Company 2</em></span>
+                      <span aria-hidden="true">·</span>
+                      <span class="description-entry__date-duration" data-test-description-entry-date-duration="">
+                      <time>2018</time> – Present
+                      </span>
+                      <!---->
+                      <!---->
+                  </li>
+                  <li data-test-description-description="" class="t-14 t-black t-normal">
+                      <!---->
+                      <span> Associate Recruiter at <em class="sh">Company 3</em></span>
+                      <span aria-hidden="true">·</span>
+                      <span class="description-entry__date-duration" data-test-description-entry-date-duration="">
+                      <time>2013</time> – <time>2015</time>
+                      </span>
+                      <!---->
+                      <!---->
+                  </li>
+                </ol>
+                <!---->    
+            </div>
           </div>
       </div>
     </article>
@@ -188,8 +108,8 @@ const searchMultipleCurrentPositionsDoc = new JSDOM(
 test("RecruiterProfilePageScrape - ensure recruiter profile scraper retrieves primary data if available", async (t) => {
   const scrape = new RecruiterProfilePageScrape(goodDoc);
 
-  t.equals(scrape.name, "Aiden Keating");
-  t.equals(scrape.company[0], "Red Hat");
+  t.equals(scrape.name, "Test User");
+  t.equals(scrape.company[0], "Company 1");
   t.equals(scrape.location, "united states");
 });
 

@@ -100,7 +100,7 @@ export class RecruiterSearchOrPipelinePageScrape {
 
   get name() {
     const nameElem = this.resultElem.querySelector(
-      ".artdeco-entity-lockup__title"
+      "span[data-test-row-lockup-full-name]"
     );
     if (!nameElem) {
       return;
@@ -110,16 +110,13 @@ export class RecruiterSearchOrPipelinePageScrape {
 
   get location() {
     const locElem = this.resultElem.querySelector(
-      ".artdeco-entity-lockup__metadata"
+      "div[data-test-row-lockup-location]"
     );
     if (!locElem) {
       return;
     }
-    const locNameElem = locElem.querySelector("div");
-    if (!locNameElem) {
-      return;
-    }
-    const splitLoc = locNameElem.textContent.trim().split(",");
+
+    const splitLoc = locElem.textContent.trim().split(",");
 
     return splitLoc[splitLoc.length - 1].trim().toLowerCase();
   }
@@ -127,7 +124,7 @@ export class RecruiterSearchOrPipelinePageScrape {
   get company() {
     // Get current selection
     const currentSection = this.resultElem.querySelector(
-      ".history-group .ember-view"
+      "div[data-test-expandable-list]"
     );
 
     // console.debug("the selection", currentSection)
@@ -151,7 +148,7 @@ export class RecruiterSearchOrPipelinePageScrape {
     currentPos.forEach((pos) => {
       // Check position is current
       const posDateElem = pos.querySelector(
-        ".row-description-entry__date-duration"
+        "span[data-test-description-entry-date-duration]"
       );
 
       if (!posDateElem || !posDateElem.textContent.toLowerCase().includes("present")) {
